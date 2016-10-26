@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20161014043743) do
   create_table "vendedors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nombre"
     t.string   "apellido"
-    t.integer  "celular"
+    t.bigint   "celular"
     t.float    "latitud",    limit: 24
     t.float    "longitud",   limit: 24
     t.string   "email"
