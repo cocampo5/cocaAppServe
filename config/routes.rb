@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :clientes
   resources :vendedors
   get 'vendedores/index'
   root	:to =>	'vendedors#index'
