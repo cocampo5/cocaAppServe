@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161109045412) do
+ActiveRecord::Schema.define(version: 20161109062020) do
+
+  create_table "clientes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "nombre"
+    t.string   "apellido"
+    t.string   "celular"
+    t.string   "email"
+    t.string   "pass"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "productos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "nombre"
+    t.text     "des",         limit: 65535
+    t.string   "precio"
+    t.integer  "vendedor_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["vendedor_id"], name: "index_productos_on_vendedor_id", using: :btree
+  end
 
   create_table "vendedors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nombre"
@@ -24,4 +44,5 @@ ActiveRecord::Schema.define(version: 20161109045412) do
     t.string   "pass"
   end
 
+  add_foreign_key "productos", "vendedors"
 end
