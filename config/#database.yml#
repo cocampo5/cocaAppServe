@@ -16,7 +16,7 @@ default: &default
   username: root
   password: admin
   #socket: /var/run/mysqld/mysqld.sock
-  host: 104.154.47.1
+  host: 102
   #port: 3306
 development:
   <<: *default
