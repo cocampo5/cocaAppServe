@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161109042047) do
+ActiveRecord::Schema.define(version: 20161109045412) do
 
   create_table "vendedors", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nombre"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20161109042047) do
     t.string   "email"
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
+    t.string   "pass"
   end
 
 end
